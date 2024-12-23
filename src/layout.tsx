@@ -1,22 +1,40 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { Metadata } from "next"
 
 export const metadata = {
-  title: 'The Guntenaar Family',
-  description: 'Welcome to the Guntenaar family website',
-}
+  metadataBase: new URL("https://guntenaar.org"),
+  title: {
+    default: "Guntenaar Family",
+    template: "%s | Guntenaar Family",
+  },
+  description: "Welcome to the Guntenaar family website",
+  openGraph: {
+    title: "Guntenaar Family",
+    description: "Welcome to the Guntenaar family website",
+    url: "https://guntenaar.org",
+    siteName: "Guntenaar Family",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guntenaar Family",
+    description: "Welcome to the Guntenaar family website",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="antialiased">
-      <body className={inter.className}>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
-  )
+  );
 }
-
