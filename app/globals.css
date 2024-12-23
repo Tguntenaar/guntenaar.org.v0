@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mask-gradient {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+:root {
+  --background: 220 14% 91%;
+  --foreground: 220 14% 5%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 220 14% 5%;
+  
+  --primary: 220 14% 5%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 220 14% 95%;
+  --secondary-foreground: 220 14% 5%;
+  
+  --muted: 220 14% 95%;
+  --muted-foreground: 220 14% 40%;
+  
+  --accent: 220 14% 95%;
+  --accent-foreground: 220 14% 5%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 220 14% 90%;
+  --input: 220 14% 90%;
+  --ring: 220 14% 20%;
+}
+
